@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import NewsTab from './pages/NewsTab';
 import FreeTalkTab from './pages/FreeTalkTab';
 import { Route } from 'react-router';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -12,6 +12,9 @@ function App() {
       </Route>
       <Route path={'/freetalk'}>
         <FreeTalkTab />
+      </Route>
+      <Route path={'/detail'}>
+        <Detail />
       </Route>
     </div>
   );

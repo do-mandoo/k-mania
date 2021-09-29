@@ -43,7 +43,7 @@ const NewsHot = () => {
         </div>
       </div>
       <div className='hotBox'>
-        <div className='hotBoxTitle'>NBA 섹션 최다 추천</div>
+        <div className='hotBoxTitle'>NBA 섹션 최다 코멘트</div>
         <div className='hotBoxText'>
           <div>1. 21-22필리 미디어데이 이모저모 (시몬스사가)</div>
           <div>2. 풀조지는 진짜 입이 무거운 거였네요</div>
@@ -54,7 +54,7 @@ const NewsHot = () => {
         </div>
       </div>
       <div className='hotBox'>
-        <div className='hotBoxTitle'>NBA 섹션 최다 추천</div>
+        <div className='hotBoxTitle'>NBA 섹션 최다 조회</div>
         <div className='hotBoxText'>
           <div>1. 21-22필리 미디어데이 이모저모 (시몬스사가)</div>
           <div>2. 풀조지는 진짜 입이 무거운 거였네요</div>

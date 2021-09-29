@@ -6,7 +6,7 @@ import FreeTalk from '../components/freetalk/FreeTalk';
 
 const FreeTalkTab = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: '#ccc' }}>
       <Header />
       <Navigation />
       <FreeTalk />

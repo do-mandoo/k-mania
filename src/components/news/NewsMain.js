@@ -29,7 +29,7 @@ const ListItemWrapper = styled.div`
   }
 `;
 
-const ListItem = () => {
+const NewsListItem = () => {
   return (
     <ListItemWrapper>
       <div className='listBar'>
@@ -52,10 +52,9 @@ const ListItem = () => {
 const NewsMain = () => {
   return (
     <MainWrapper>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      <NewsListItem />
+      <NewsListItem />
+      <NewsListItem />
     </MainWrapper>
   );
 };
