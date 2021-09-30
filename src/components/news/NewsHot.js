@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const NewsHotWrapper = styled.div`
   margin-top: 50px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   .hotBox {
@@ -12,6 +12,7 @@ const NewsHotWrapper = styled.div`
     background-color: #fff;
     font-size: 12px;
     text-align: left;
+    border: 1px solid #aaa;
   }
   .hotBoxTitle {
     background-color: navy;

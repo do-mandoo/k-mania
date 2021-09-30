@@ -2,22 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SideWrapper = styled.div`
-  border: 3px dashed yellow;
-  margin-left: 30px;
+  margin-left: 20px;
   .sideBox {
     margin-bottom: 20px;
     background-color: #fff;
-    font-size: 12px;
     text-align: left;
+    border: 1px solid #aaa;
   }
   .sideBoxTitle {
     background-color: navy;
     color: #fff;
+    font-size: 15px;
     padding: 10px 15px;
   }
   .sideBoxText {
     padding: 10px 15px;
     display: flex;
+    font-size: 12px;
   }
   .sideBoxScroll {
     max-height: 227px;
@@ -32,7 +33,7 @@ const SideWrapper = styled.div`
   }
   button {
     border: 1px solid #000;
-    font-size: 16px;
+    font-size: 14px;
     margin: 5px;
     cursor: pointer;
   }

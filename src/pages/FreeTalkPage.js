@@ -2,17 +2,17 @@ import React from 'react';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import Navigation from '../components/common/Navigation';
-import News from '../components/news/News';
+import FreeTalk from '../components/freetalk/FreeTalk';
 
-const NewsTab = () => {
+const FreeTalkPage = () => {
   return (
     <div style={{ backgroundColor: '#ccc' }}>
       <Header />
       <Navigation />
-      <News />
+      <FreeTalk />
       <Footer />
     </div>
   );
 };
 
-export default NewsTab;
+export default FreeTalkPage;

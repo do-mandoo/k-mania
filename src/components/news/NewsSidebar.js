@@ -3,19 +3,22 @@ import styled from 'styled-components';
 
 const SideWrapper = styled.div`
   /* display: flex; */
-  border: 3px dashed yellow;
+  /* border: 3px dashed yellow; */
+  margin-left: 20px;
   .sideBox {
     margin-bottom: 20px;
     background-color: #fff;
-    font-size: 12px;
     text-align: left;
+    border: 1px solid #aaa;
   }
   .sideBoxTitle {
+    font-size: 15px;
     background-color: navy;
     color: #fff;
     padding: 10px 15px;
   }
   .sideBoxText {
+    font-size: 12px;
     padding: 10px 15px;
     line-height: 20px;
   }

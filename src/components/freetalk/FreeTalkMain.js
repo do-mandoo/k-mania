@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  border: 1px solid blue;
+  border-top: 8px solid #0c2e51;
 `;
 
 const ListItemWrapper = styled.div`
@@ -31,13 +32,15 @@ const ListItemWrapper = styled.div`
 const TalkListItem = () => {
   return (
     <ListItemWrapper>
-      <div className='listBar'>
-        <div>{new Date().toLocaleTimeString()}</div>
-        <div className='like'>좋아요숫자</div>
-        <div>디즈니 신작 엔칸토 티저</div>
-        <div>작성자</div>
-        <div className='look'>작성글방문숫자</div>
-      </div>
+      <Link to='detail'>
+        <div className='listBar'>
+          <div>{new Date().toLocaleTimeString()}</div>
+          <div className='like'>좋아요숫자</div>
+          <div>디즈니 신작 엔칸토 티저</div>
+          <div>작성자</div>
+          <div className='look'>작성글방문숫자</div>
+        </div>
+      </Link>
     </ListItemWrapper>
   );
 };

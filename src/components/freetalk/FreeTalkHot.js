@@ -3,15 +3,14 @@ import styled from 'styled-components';
 
 const TalkHotWrapper = styled.div`
   margin-top: 50px;
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   .hotBox {
-    /* margin-left: 20px; */
     width: 350px;
     background-color: #fff;
     font-size: 12px;
     text-align: left;
+    border: 1px solid #aaa;
   }
   .hotBoxTitle {
     background-color: navy;

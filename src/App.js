@@ -1,20 +1,24 @@
 import './App.css';
-import NewsTab from './pages/NewsTab';
-import FreeTalkTab from './pages/FreeTalkTab';
+import NewsPage from './pages/NewsPage';
+import FreeTalkPage from './pages/FreeTalkPage';
 import { Route } from 'react-router';
-import Detail from './pages/Detail';
+import DetailPage from './pages/DetailPage';
+import WrithPage from './pages/WritePage';
 
 function App() {
   return (
     <div className='App'>
       <Route path={'/'} exact>
-        <NewsTab />
+        <NewsPage />
       </Route>
       <Route path={'/freetalk'}>
-        <FreeTalkTab />
+        <FreeTalkPage />
       </Route>
       <Route path={'/detail'}>
-        <Detail />
+        <DetailPage />
+      </Route>
+      <Route path={'/write'}>
+        <WrithPage />
       </Route>
     </div>
   );

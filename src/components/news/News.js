@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import NewsHot from './NewsHot';
 import NewsMain from './NewsMain';
 import NewsSidebar from './NewsSidebar';
+import { BiCalendar, BiLink } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
-  /* background-color: #ccc; */
+  /* margin-top: 30px; */
   .container {
     width: 1089px;
-    margin: 0 auto 5px;
+    margin: 30px auto 5px;
   }
-  .listheader {
+  .listHeader {
     display: flex;
     justify-content: space-between;
     padding-right: 365px;
@@ -30,13 +32,12 @@ const Wrapper = styled.div`
     display: flex;
   }
 
-  .mainBoard .board1:nth-child(1) {
-    border: 4px dashed green;
+  .boardRight {
+    border: 1px solid #aaa;
     background-color: #fff;
     flex: 2;
   }
-  .mainBoard .board2:nth-child(2) {
-    margin-left: 20px;
+  .boardLeft {
     flex: 1;
   }
 `;
@@ -46,18 +47,27 @@ const News = () => {
     <>
       <Wrapper>
         <div className='container'>
-          <div className='listheader'>
+          <div className='listHeader'>
             <h2>NBA News</h2>
             <div className='topRight'>
-              <div>달력</div>
-              <div>링크</div>
+              <div>
+                <BiCalendar />
+              </div>
+              <div>
+                <BiLink />
+              </div>
             </div>
           </div>
           <div className='mainBoard'>
-            <div className='board1'>
+            <div className='boardRight'>
               <NewsMain />
             </div>
-            <div className='board2'>
+            <div>
+              <button className='writeBtn'>
+                <Link to='write'>글쓰기</Link>
+              </button>
+            </div>
+            <div className='boardLeft'>
               <NewsSidebar />
             </div>
           </div>
