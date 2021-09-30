@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SideWrapper = styled.div`
@@ -51,19 +52,21 @@ const NewsSidebar = () => {
           소식들을 전해 주세요!
         </div>
         <div className='sideBoxScroll'>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
-          <div>source expect kyrie irving to eventually get vaccine</div>
+          <div>
+            <Link to='none'>source expect kyrie irving to eventually get vaccine</Link>
+          </div>
+          <div>
+            <Link to='none'>source expect kyrie irving to eventually get vaccine</Link>
+          </div>
+          <div>
+            <Link to='none'>source expect kyrie irving to eventually get vaccine</Link>
+          </div>
+          <div>
+            <Link to='none'>source expect kyrie irving to eventually get vaccine</Link>
+          </div>
+          <div>
+            <Link to='none'>source expect kyrie irving to eventually get vaccine</Link>
+          </div>
         </div>
       </div>
     </SideWrapper>

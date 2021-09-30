@@ -1,5 +1,6 @@
 import React from 'react';
 import { GrDesktop } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DetailMainWrapper = styled.div`
@@ -27,6 +28,8 @@ const DetailMainWrapper = styled.div`
     div {
       margin-right: 5px;
       border-right: 1px solid #bbb;
+    }
+    .writeUserId {
       cursor: pointer;
     }
     div:nth-child(1) {
@@ -63,7 +66,9 @@ const DetailMain = () => {
           <div>
             <GrDesktop />
           </div>
-          <div>작성자ID</div>
+          <div className='writeUserId'>
+            <Link to='none'>작성자ID</Link>
+          </div>
           <div>
             update at__
             {new Date().toLocaleDateString()}-{new Date().toLocaleTimeString()}

@@ -54,11 +54,15 @@ const Header = () => {
           <HiOutlineUsers />
         </div> */}
         <div className='powerBtn'>
-          <IoMdPower />
+          <Link to='none'>
+            <IoMdPower />
+          </Link>
         </div>
         <div className='searchBtn'>
           <input type='search' className='searchInput' />
-          <ImSearch />
+          <Link to='search'>
+            <ImSearch />
+          </Link>
         </div>
       </div>
     </Wrapper>

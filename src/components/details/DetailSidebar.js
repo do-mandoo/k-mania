@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DetailSidebarWrapper = styled.div`
@@ -36,6 +37,9 @@ const DetailSidebarWrapper = styled.div`
   .userSignDate > span:nth-child(2) {
     padding-left: 10px;
   }
+  .nicName {
+    cursor: pointer;
+  }
   .userActiveChart {
     padding: 10px;
   }
@@ -47,8 +51,14 @@ const DetailSidebar = () => {
       <div className='sideBoxTitle'>작성자 프로필</div>
       <div className='sideBoxText'>
         <div className='userNicName'>
-          <span>닉네임(프사)</span>
-          <span>HelloWorld</span>
+          <span>
+            <Link to='none' target='_blank'>
+              닉네임(프사)
+            </Link>
+          </span>
+          <span className='nicName'>
+            <Link to='none'>HelloWorld</Link>
+          </span>
         </div>
         <div className='userSignDate'>
           <span>가입일</span>

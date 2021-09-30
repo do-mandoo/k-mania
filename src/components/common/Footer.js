@@ -30,6 +30,7 @@ const FooterWrapper = styled.div`
   .logo {
     text-decoration: underline;
     cursor: pointer;
+    /* scroll-behavior: smooth; */
     :hover {
       color: #aaa;
     }
@@ -63,7 +64,14 @@ const Footer = () => {
           </Link>
         </div>
         <div className='logo'>
-          <Link to='/'>MANIA STATUS</Link>
+          <Link
+            to='/'
+            onClick={e => {
+              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            }}
+          >
+            MANIA STATUS
+          </Link>
         </div>
       </div>
     </FooterWrapper>
