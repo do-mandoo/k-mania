@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Comments from './Comments';
 import DetailMain from './DetailMain';
 
 import DetailSidebar from './DetailSidebar';
@@ -20,9 +21,11 @@ const ViewWrapper = styled.div`
     display: flex;
   }
   .boardRight {
+    flex: 2;
+  }
+  .boarderRightMain {
     border: 1px solid #aaa;
     background-color: #fff;
-    flex: 2;
   }
   .boardLeft {
     margin-left: 20px;
@@ -38,7 +41,12 @@ const Detail = () => {
       </div>
       <div className='detailBorder'>
         <div className='boardRight'>
-          <DetailMain />
+          <div className='boarderRightMain'>
+            <DetailMain />
+          </div>
+          <div>
+            <Comments />
+          </div>
         </div>
         <div className='boardLeft'>
           <DetailSidebar />

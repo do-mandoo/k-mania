@@ -3,8 +3,8 @@ import styled from 'styled-components';
 // import NewsHot from './NewsHot';
 // import NewsMain from './NewsMain';
 // import NewsSidebar from './NewsSidebar';
-import { BiCalendar, BiLink } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+// import { BiCalendar, BiLink } from 'react-icons/bi';
+// import { Link } from 'react-router-dom';
 import SearchingMain from './SearchingMain';
 import SearchingSidebar from './SearchingSidebar';
 
