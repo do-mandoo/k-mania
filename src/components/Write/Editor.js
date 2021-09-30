@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 import styled from 'styled-components';
+import Category from './Category';
 
 const EditorWrapper = styled.div`
   padding: 30px;
@@ -49,11 +50,13 @@ const Editor = () => {
   }, []);
 
   return (
+    // <></>
     <EditorWrapper>
       <input className='titleInput' placeholder='제목을 입력하세요' />
       <div className='quillWrapper'>
         <div ref={quillElement} />
       </div>
+      <Category />
     </EditorWrapper>
   );
 };

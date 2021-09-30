@@ -20,17 +20,7 @@ const WriteSideWrapper = styled.div`
     padding: 10px 15px;
     line-height: 20px;
   }
-  .sideBoxScroll {
-    max-height: 227px;
-    overflow: auto;
-  }
-  .sideBoxScroll > div {
-    text-align: left;
-    padding: 5px 10px;
-    border-top: 1px solid #ddd;
-    font-weight: 500;
-    font-size: 14px;
-  }
+
   .notice1 {
     border-bottom: 1px solid #aaa;
   }

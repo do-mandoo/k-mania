@@ -36,6 +36,12 @@ const Wrapper = styled.div`
     border: 1px solid #aaa;
     background-color: #fff;
     flex: 2;
+    position: relative;
+  }
+  .rightBtn {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
   }
   .boardLeft {
     flex: 1;
@@ -49,23 +55,25 @@ const News = () => {
         <div className='container'>
           <div className='listHeader'>
             <h2>NBA News</h2>
-            <div className='topRight'>
+            {/* <div className='topRight'>
               <div>
                 <BiCalendar />
               </div>
               <div>
                 <BiLink />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className='mainBoard'>
             <div className='boardRight'>
-              <NewsMain />
-            </div>
-            <div>
-              <button className='writeBtn'>
-                <Link to='write'>글쓰기</Link>
-              </button>
+              <div className='rightItems'>
+                <NewsMain />
+              </div>
+              <div className='rightBtn'>
+                <button className='writeBtn'>
+                  <Link to='write'>글쓰기</Link>
+                </button>
+              </div>
             </div>
             <div className='boardLeft'>
               <NewsSidebar />

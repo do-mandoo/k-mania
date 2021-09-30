@@ -58,6 +58,9 @@ const FreeTalkSidebar = () => {
           <div className='viewQuestion'>
             <button>질문</button>
           </div>
+          <div className='viewNomal'>
+            <button>일반</button>
+          </div>
         </div>
       </div>
     </SideWrapper>

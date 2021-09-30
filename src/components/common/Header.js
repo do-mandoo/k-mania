@@ -26,6 +26,19 @@ const Wrapper = styled.div`
   .searchBtn {
     cursor: pointer;
   }
+  .powerBtn {
+  }
+  .searchInput {
+    width: 70px;
+    margin-right: 5px;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    background: 0 0;
+    height: 13px;
+    line-height: 13px;
+    padding: 9px 0;
+    color: #fff;
+  }
 `;
 
 const Header = () => {
@@ -37,13 +50,14 @@ const Header = () => {
         </Link>
       </h1>
       <div className='right'>
-        <div className='loginUsersBtn'>
+        {/* <div className='loginUsersBtn'>
           <HiOutlineUsers />
-        </div>
+        </div> */}
         <div className='powerBtn'>
           <IoMdPower />
         </div>
         <div className='searchBtn'>
+          <input type='search' className='searchInput' />
           <ImSearch />
         </div>
       </div>

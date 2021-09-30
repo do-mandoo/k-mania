@@ -31,6 +31,12 @@ const Wrapper = styled.div`
     background-color: #fff;
     border: 1px solid #aaa;
     flex: 2;
+    position: relative;
+  }
+  .rightBtn {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
   }
   .freetalkLeft {
     flex: 1;
@@ -46,11 +52,15 @@ const FreeTalk = () => {
         </div>
         <div className='freetalkBoard'>
           <div className='freetalkRight'>
-            <FreeTalkMain />
+            <div className='rightItems'>
+              <FreeTalkMain />
+            </div>
+            <div className='rightBtn'>
+              <button className='writeBtn'>
+                <Link to='write'>글쓰기</Link>
+              </button>
+            </div>
           </div>
-          <button className='writeBtn'>
-            <Link to='write'>글쓰기</Link>
-          </button>
           <div className='freetalkLeft'>
             <FreeTalkSidebar />
           </div>
