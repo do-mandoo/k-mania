@@ -29,7 +29,7 @@ const EditorWrapper = styled.div`
   }
 `;
 
-const Editor = () => {
+const Editor = ({ title, text, onChangeField }) => {
   const quillElement = useRef(null);
   const quillInstance = useRef(null);
 
@@ -47,12 +47,28 @@ const Editor = () => {
       },
       theme: 'snow',
     });
-  }, []);
+    //quill에 text-change 이벤트 핸들러 등록
+    const quill = quillInstance.current;
+    quill.on('text-change', (delta, oldDelta, source) => {
+      // if (source === 'user') {
+      onChangeField({ key: 'text', value: quill.root.innerHTML });
+      // }
+    });
+  }, [onChangeField]);
+
+  const onChangeTitle = e => {
+    onChangeField({ key: 'title', value: e.target.value });
+  };
 
   return (
     // <></>
     <EditorWrapper>
-      <input className='titleInput' placeholder='제목을 입력하세요' />
+      <input
+        className='titleInput'
+        placeholder='제목을 입력하세요'
+        onChange={onChangeTitle}
+        value={title}
+      />
       <div className='quillWrapper'>
         <div ref={quillElement} />
       </div>
