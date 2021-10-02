@@ -1,7 +1,7 @@
 import { all } from '@redux-saga/core/effects';
 import { combineReducers } from 'redux';
 import loading from './loading';
-import write from './write';
+import write, { writeSaga } from './write';
 
 const rootReducer = combineReducers({
   loading,
@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
 });
 
 export function* rootSaga() {
-  yield all([]);
+  yield all([writeSaga()]);
 }
 
 export default rootReducer;

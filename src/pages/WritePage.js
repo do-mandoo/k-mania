@@ -3,7 +3,7 @@ import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import Navigation from '../components/common/Navigation';
 import Write from '../components/Write/Write';
-import WrithActionButtons from '../components/Write/WrithActionButtons';
+import WriteActionButtonsContainer from '../container/WriteActionButtonsContainer';
 
 const WrithPage = () => {
   return (
@@ -11,7 +11,7 @@ const WrithPage = () => {
       <Header />
       <Navigation />
       <Write />
-      <WrithActionButtons />
+      <WriteActionButtonsContainer />
       <Footer />
     </div>
   );
