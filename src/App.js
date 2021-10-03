@@ -16,7 +16,7 @@ function App() {
       <Route path={'/freetalk'}>
         <FreeTalkPage />
       </Route>
-      <Route path={'/detail'}>
+      <Route path={'/@:postId'}>
         <DetailPage />
       </Route>
       <Route path={'/write'}>
