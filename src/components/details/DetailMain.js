@@ -73,7 +73,7 @@ const DetailMain = ({ post, error, loading }) => {
     return <DetailMainWrapper>포스트 없음</DetailMainWrapper>;
   }
   console.log(post, 'post에 뭐가 들었는지 보자');
-  const { title, text, publichedDate } = post;
+  const { title, text, publichedDate, _id } = post;
   return (
     <DetailMainWrapper>
       <div className='detailContainer'>
@@ -83,7 +83,7 @@ const DetailMain = ({ post, error, loading }) => {
             <GrDesktop />
           </div>
           <div className='writeUserId'>
-            <Link to='none'>작성자ID</Link>
+            <Link to='none'>{_id}</Link>
           </div>
           <div>
             update at__

@@ -5,11 +5,12 @@ import NewsMain from './NewsMain';
 import NewsSidebar from './NewsSidebar';
 import { BiCalendar, BiLink } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import PostListContainer from '../../container/PostListContainer';
 
 const Wrapper = styled.div`
   /* margin-top: 30px; */
   .container {
-    width: 1089px;
+    max-width: 1089px;
     margin: 30px auto 5px;
   }
   .listHeader {
@@ -67,7 +68,7 @@ const News = () => {
           <div className='mainBoard'>
             <div className='boardRight'>
               <div className='rightItems'>
-                <NewsMain />
+                <PostListContainer />
               </div>
               <div className='rightBtn'>
                 <button className='writeBtn'>

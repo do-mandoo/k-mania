@@ -6,17 +6,19 @@ const MainWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   border-top: 8px solid #0c2e51;
+  width: 750px;
 `;
 
 const ListItemWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   border-bottom: 1px solid #ddd;
-  justify-content: space-around;
   padding: 5px 10px;
   cursor: pointer;
+  text-align: left;
   .listBar,
   .listSub {
     display: flex;
+    justify-content: space-around;
   }
   .listBar > div {
     padding: 0 10px;
@@ -24,7 +26,23 @@ const ListItemWrapper = styled.div`
   .listBar {
     align-items: center;
   }
-  .listSub > div {
+  .listBarText {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #eee;
+    margin-right: 10px;
+    width: 400px;
+  }
+  .teamLogos {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100px;
+    background-color: #eee;
+    margin-right: 10px;
+  }
+  .listBarSub > div {
     padding: 0 10px;
   }
   .look {
@@ -32,21 +50,21 @@ const ListItemWrapper = styled.div`
   }
 `;
 
-const NewsListItem = () => {
+const NewsListItem = ({ post }) => {
+  console.log(post, 'post도 보까~');
+  const { publichedDate, title, text, _id } = post;
   return (
     <ListItemWrapper>
       {/* detail&wr_id=고유번호 */}
-      <Link to='detail'>
+      <Link to={`/@${_id}`}>
         <div className='listBar'>
-          <div className='teamLogos'>뱃지</div>
-          <div className='listBarText'>
-            트레벨린 퀸과 부분 보장 트레이닝 캠프 계약을 맺은 레이커스
-          </div>
+          <div className='teamLogos'>{title}</div>
+          <div className='listBarText'>{text}</div>
           <div className='listBarRight'>
-            미네소타 팀버울브스
+            {_id}
             <div className='listBarSub'>
               <span className='look'>5123</span>
-              <span className='timeStamp'>{new Date().toLocaleDateString()}</span>
+              <span className='timeStamp'>{new Date(publichedDate).toLocaleDateString()}</span>
             </div>
           </div>
         </div>
@@ -55,12 +73,21 @@ const NewsListItem = () => {
   );
 };
 
-const NewsMain = () => {
+const NewsMain = ({ posts, loading, error }) => {
+  console.log(posts, 'posts뭐가넘어오냐');
+  // 에러 발생 시
+  if (error) {
+    return <MainWrapper>에러가 발생 했습니다.</MainWrapper>;
+  }
   return (
     <MainWrapper>
-      <NewsListItem />
-      <NewsListItem />
-      <NewsListItem />
+      {!loading && posts && (
+        <div>
+          {posts.map(post => (
+            <NewsListItem post={post} key={post.id} />
+          ))}
+        </div>
+      )}
     </MainWrapper>
   );
 };
