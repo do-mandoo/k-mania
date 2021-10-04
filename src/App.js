@@ -10,16 +10,19 @@ import SearchPage from './pages/SearchPage';
 function App() {
   return (
     <div className='App'>
-      <Route path={'/'} exact>
+      <Route path={['/news', '/']} exact>
         <NewsPage />
       </Route>
-      <Route path={'/freetalk'}>
+      <Route path={'/freeTalk'}>
         <FreeTalkPage />
       </Route>
       <Route path={'/@:postId'}>
         <DetailPage />
       </Route>
-      <Route path={'/write'}>
+      <Route path={'/newsWrite'}>
+        <WrithPage />
+      </Route>
+      <Route path={'/freeTalkWrite'}>
         <WrithPage />
       </Route>
       <Route path={'/none'}>

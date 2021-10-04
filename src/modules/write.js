@@ -21,7 +21,7 @@ export const writePost = createAction(WRITE_POST, ({ title, text }) => ({
 }));
 
 // 사가 생성
-const writePostSaga = createRequestSaga(WRITE_POST, postsAPI.writePost);
+const writePostSaga = createRequestSaga(WRITE_POST, postsAPI.writeNews);
 export function* writeSaga() {
   yield takeLatest(WRITE_POST, writePostSaga);
 }

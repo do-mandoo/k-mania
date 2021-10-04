@@ -22,12 +22,12 @@ const Navigation = () => {
   return (
     <Wrapper>
       <div>
-        <Link to='/' className='news'>
+        <Link to='/news' className='news'>
           News
         </Link>
       </div>
       <div>
-        <Link to='/FreeTalk' className='freetalk'>
+        <Link to='/freeTalk' className='freetalk'>
           Free-Talk
         </Link>
       </div>

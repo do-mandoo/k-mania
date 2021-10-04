@@ -52,7 +52,7 @@ const ListItemWrapper = styled.div`
 
 const NewsListItem = ({ post }) => {
   console.log(post, 'post도 보까~');
-  const { publichedDate, title, text, _id } = post;
+  const { publichedDate, title, text, _id } = post._doc;
   return (
     <ListItemWrapper>
       {/* detail&wr_id=고유번호 */}

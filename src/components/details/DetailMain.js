@@ -58,12 +58,15 @@ const DetailMainWrapper = styled.div`
   }
 `;
 
-const DetailMain = ({ post, error, loading }) => {
+const DetailMain = ({ post, error, loading, postFun, errorFun, loadingFun }) => {
   // 에러 발생 시
   if (error) {
     if (error.response && error.response.status === 404) {
       return <DetailMainWrapper>존재하지 않는 포스트입니다.</DetailMainWrapper>;
     }
+    // if (errorFun.response && errorFun.response.status === 404) {
+    //   return <DetailMainWrapper>존재하지 않는 포스트입니다.</DetailMainWrapper>;
+    // }
     return <DetailMainWrapper>오류 발생!!</DetailMainWrapper>;
   }
   // 로딩 중이거나 아직 포스트가 없을 때
@@ -73,26 +76,28 @@ const DetailMain = ({ post, error, loading }) => {
     return <DetailMainWrapper>포스트 없음</DetailMainWrapper>;
   }
   console.log(post, 'post에 뭐가 들었는지 보자');
-  const { title, text, publichedDate, _id } = post;
+  console.log(postFun, 'postFun에 뭐가 들었는지 보자');
+  // const { title, text, publichedDate, _id } = post;
+  const { titleFun, textFun } = postFun;
+
   return (
     <DetailMainWrapper>
       <div className='detailContainer'>
-        <h1 className='detailHeader1'>{title}</h1>
+        <h1 className='detailHeader1'>{titleFun}</h1>
         <div className='detailHeader2'>
           <div>
             <GrDesktop />
           </div>
           <div className='writeUserId'>
-            <Link to='none'>{_id}</Link>
+            <Link to='none'>{}</Link>
           </div>
           <div>
             update at__
-            {new Date(publichedDate).toLocaleDateString()}-
-            {new Date(publichedDate).toLocaleTimeString()}
+            {new Date().toLocaleDateString()}-{new Date().toLocaleTimeString()}
           </div>
           <div>Like숫자</div>
         </div>
-        <div className='detailContent' dangerouslySetInnerHTML={{ __html: text }}>
+        <div className='detailContent' dangerouslySetInnerHTML={{ __html: textFun }}>
           {/* <div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             has been the industry's standard dummy text ever since the 1500s, when an unknown

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listPosts } from '../modules/posts';
-import FreeTalkMain from '../components/freetalk/FreeTalkMain';
 import NewsMain from '../components/news/NewsMain';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
 
-const PostListContainer = ({ match }) => {
+const NewsListContainer = ({ match }) => {
+  console.log(match, 'matchalkdjf29323');
   const { postId } = match.params;
+  // const location = useLocation();
+  // console.log(location, 'location~~~');
   const dispatch = useDispatch();
   const { posts, error, loading } = useSelector(({ posts, loading }) => ({
     posts: posts.posts,
@@ -25,4 +27,4 @@ const PostListContainer = ({ match }) => {
   );
 };
 
-export default withRouter(PostListContainer);
+export default withRouter(NewsListContainer);

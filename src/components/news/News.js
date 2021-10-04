@@ -4,8 +4,8 @@ import NewsHot from './NewsHot';
 import NewsMain from './NewsMain';
 import NewsSidebar from './NewsSidebar';
 import { BiCalendar, BiLink } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
-import PostListContainer from '../../container/PostListContainer';
+import { Link, useLocation } from 'react-router-dom';
+import NewsListContainer from '../../container/NewsListContainer';
 
 const Wrapper = styled.div`
   /* margin-top: 30px; */
@@ -49,7 +49,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const News = () => {
+const News = ({ history }) => {
+  // const { pathname } = useLocation();
+
   return (
     <>
       <Wrapper>
@@ -68,11 +70,11 @@ const News = () => {
           <div className='mainBoard'>
             <div className='boardRight'>
               <div className='rightItems'>
-                <PostListContainer />
+                <NewsListContainer />
               </div>
               <div className='rightBtn'>
                 <button className='writeBtn'>
-                  <Link to='write'>글쓰기</Link>
+                  <Link to='/newsWrite'>글쓰기</Link>
                 </button>
               </div>
             </div>

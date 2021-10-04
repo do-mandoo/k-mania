@@ -29,27 +29,40 @@ const ListItemWrapper = styled.div`
   }
 `;
 
-const TalkListItem = () => {
+const TalkListItem = ({ postFun }) => {
+  console.log(postFun, 'postFun은 뭔데!!ㅋㅋㅋ');
+  const { publichedDate, title, text, _id } = postFun._doc;
   return (
     <ListItemWrapper>
-      <Link to='detail'>
+      <Link to={`/@${_id}`}>
         <div className='listBar'>
-          <div>{new Date().toLocaleTimeString()}</div>
-          <div className='like'>좋아요숫자</div>
-          <div>디즈니 신작 엔칸토 티저</div>
-          <div>작성자</div>
-          <div className='look'>작성글방문숫자</div>
+          <div>{title}</div>
+          <div>{new Date(publichedDate).toLocaleDateString()}</div>
+          <div className='like'>likeNum</div>
+          <div>{text}</div>
+          <div>{_id}</div>
+          <div className='look'>visitNum</div>
         </div>
       </Link>
     </ListItemWrapper>
   );
 };
 
-const FreeTalkMain = () => {
+const FreeTalkMain = ({ postsFun, loading, errorFun }) => {
+  console.log(postsFun, 'postsFun뭐가넘어오냐');
+  // 에러 발생 시
+  if (errorFun) {
+    return <MainWrapper>에러가 발생 했습니다.</MainWrapper>;
+  }
   return (
     <MainWrapper>
-      <TalkListItem />
-      <TalkListItem />
+      {!loading && postsFun && (
+        <div>
+          {postsFun.map(postFun => (
+            <TalkListItem postFun={postFun} key={postFun.id} />
+          ))}
+        </div>
+      )}
     </MainWrapper>
   );
 };

@@ -23,10 +23,13 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const WrithActionButtons = ({ onPublish, onCancel }) => {
+const WrithActionButtons = ({ onPublish, onPublishFun, onCancel }) => {
   return (
     <WriteActionButtonWrap>
       <StyledButton className='added' onClick={onPublish}>
+        포스트 등록
+      </StyledButton>
+      <StyledButton className='added' onClick={onPublishFun}>
         포스트 등록
       </StyledButton>
       <StyledButton className='canceled' onClick={onCancel}>

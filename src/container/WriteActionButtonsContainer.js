@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
 import { writePost } from '../modules/write';
+import { writePostFun } from '../modules/writeFun';
 import WrithActionButtons from '../components/Write/WrithActionButtons';
 
 const WriteActionButtonsContainer = ({ history }) => {
@@ -13,12 +14,28 @@ const WriteActionButtonsContainer = ({ history }) => {
     postError: write.postError,
   }));
 
+  const dispatchFun = useDispatch();
+  const { titleFun, textFun, postFun, postErrorFun } = useSelector(({ writeFun }) => ({
+    title: writeFun.titleFun,
+    text: writeFun.textFun,
+    post: writeFun.postFun,
+    postError: writeFun.postErrorFun,
+  }));
+
   // 포스트 등록
   const onPublish = () => {
     dispatch(
       writePost({
         title,
         text,
+      })
+    );
+  };
+  const onPublishFun = () => {
+    dispatchFun(
+      writePostFun({
+        titleFun,
+        textFun,
       })
     );
   };
@@ -30,18 +47,34 @@ const WriteActionButtonsContainer = ({ history }) => {
 
   console.log('123403095980220902');
 
+  const location = useLocation();
   // 성공 혹은 실패 시 할 작업
   useEffect(() => {
     if (post) {
       const { _id } = post;
-      history.push(`/@${_id}`);
+      const { pathname } = location;
+      console.log('s111alkjdofailoation', location);
+      console.log(post, 'post아넹 패스네임잇기룰~');
+      history.push(`/@${_id}/${pathname}`);
+    }
+    if (postFun) {
+      const { _id } = postFun;
+      const { pathname } = location;
+      console.log('s111alkjdofailoation', location);
+      console.log(post, 'post아넹 패스네임잇기룰~');
+      history.push(`/@${_id}/${pathname}`);
     }
     if (postError) {
       console.log(postError, 'posterror');
     }
-  }, [history, post, postError]);
+    if (postErrorFun) {
+      console.log(postError, 'posterror');
+    }
+  }, [history, post, postError, postFun, postErrorFun, location]);
 
-  return <WrithActionButtons onPublish={onPublish} onCancel={onCancel} />;
+  return (
+    <WrithActionButtons onPublish={onPublish} onCancel={onCancel} onPublishFun={onPublishFun} />
+  );
 };
 
 export default withRouter(WriteActionButtonsContainer);

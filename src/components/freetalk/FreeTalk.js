@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PostListContainer from '../../container/PostListContainer';
+import FunListContainer from '../../container/FunListContainer';
 import FreeTalkHot from './FreeTalkHot';
 import FreeTalkMain from './FreeTalkMain';
 import FreeTalkSidebar from './FreeTalkSidebar';
@@ -54,11 +54,11 @@ const FreeTalk = () => {
         <div className='freetalkBoard'>
           <div className='freetalkRight'>
             <div className='rightItems'>
-              <PostListContainer />
+              <FunListContainer />
             </div>
             <div className='rightBtn'>
               <button className='writeBtn'>
-                <Link to='write'>글쓰기</Link>
+                <Link to='/freeTalkWrite'>글쓰기</Link>
               </button>
             </div>
           </div>
