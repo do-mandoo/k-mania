@@ -22,14 +22,17 @@ const StyledButton = styled(Button)`
     margin-left: 8px;
   }
 `;
-
-const WrithActionButtons = ({ onPublish, onCancel }) => {
+const WrithActionButtons = () => {
+  const onClickAdd = e => {};
+  const onClickBack = () => {
+    window.history.back();
+  };
   return (
     <WriteActionButtonWrap>
-      <StyledButton className='added' onClick={onPublish}>
+      <StyledButton className='added' onClick={onClickAdd}>
         포스트 등록
       </StyledButton>
-      <StyledButton className='canceled' onClick={onCancel}>
+      <StyledButton className='canceled' onClick={onClickBack}>
         작성취소
       </StyledButton>
     </WriteActionButtonWrap>

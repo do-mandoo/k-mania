@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditorContainer from '../../container/EditorContainer';
+// import EditorContainer from '../../container/EditorContainer';
+import Editor from './Editor';
 import WriteSidebar from './WriteSidebar';
 
 const WriteWrap = styled.div`
@@ -19,7 +20,8 @@ const Write = () => {
   return (
     <WriteWrap>
       <div className='writeRight'>
-        <EditorContainer />
+        {/* <EditorContainer /> */}
+        <Editor />
       </div>
       <div className='writeLeft'>
         <WriteSidebar />

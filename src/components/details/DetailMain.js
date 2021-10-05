@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GrDesktop } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -58,41 +58,28 @@ const DetailMainWrapper = styled.div`
   }
 `;
 
-const DetailMain = ({ post, error, loading }) => {
-  // 에러 발생 시
-  if (error) {
-    if (error.response && error.response.status === 404) {
-      return <DetailMainWrapper>존재하지 않는 포스트입니다.</DetailMainWrapper>;
-    }
-    return <DetailMainWrapper>오류 발생!!</DetailMainWrapper>;
-  }
-  // 로딩 중이거나 아직 포스트가 없을 때
-  if (loading) {
-    return <DetailMainWrapper>로딩 중</DetailMainWrapper>;
-  } else if (!post) {
-    return <DetailMainWrapper>포스트 없음</DetailMainWrapper>;
-  }
-  console.log(post, 'post에 뭐가 들었는지 보자');
-  const { title, text, publichedDate, _id } = post;
+const DetailMain = ({ history, match, location }) => {
+  const [data, setData] = useState({});
+  console.log(history, match, location);
+  const { id } = match.params;
   return (
     <DetailMainWrapper>
       <div className='detailContainer'>
-        <h1 className='detailHeader1'>{title}</h1>
+        <h1 className='detailHeader1'>제목</h1>
         <div className='detailHeader2'>
           <div>
             <GrDesktop />
           </div>
           <div className='writeUserId'>
-            <Link to='none'>{_id}</Link>
+            <Link to='none'>작성자ID</Link>
           </div>
           <div>
             update at__
-            {new Date(publichedDate).toLocaleDateString()}-
-            {new Date(publichedDate).toLocaleTimeString()}
+            {new Date().toLocaleDateString()}-{new Date().toLocaleTimeString()}
           </div>
           <div>Like숫자</div>
         </div>
-        <div className='detailContent' dangerouslySetInnerHTML={{ __html: text }}>
+        <div className='detailContent' dangerouslySetInnerHTML={{ __html: '<p>내용입니다</p>' }}>
           {/* <div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             has been the industry's standard dummy text ever since the 1500s, when an unknown

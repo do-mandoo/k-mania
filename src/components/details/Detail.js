@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import DetailContainer from '../../container/DetailContainer';
+// import DetailContainer from '../../container/DetailContainer';
 import Comments from './Comments';
 import DetailMain from './DetailMain';
 
@@ -43,7 +43,8 @@ const Detail = () => {
       <div className='detailBorder'>
         <div className='boardRight'>
           <div className='boarderRightMain'>
-            <DetailContainer />
+            {/* <DetailContainer /> */}
+            <DetailMain />
           </div>
           <div>
             <Comments />

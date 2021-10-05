@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { boardList } from '../../Data';
 
 const MainWrapper = styled.div`
   display: flex;
@@ -50,21 +51,20 @@ const ListItemWrapper = styled.div`
   }
 `;
 
-const NewsListItem = ({ post }) => {
-  console.log(post, 'post도 보까~');
-  const { publichedDate, title, text, _id } = post;
+const NewsListItem = ({ data }) => {
+  console.log(data, '받아온 이거 확인해');
   return (
     <ListItemWrapper>
       {/* detail&wr_id=고유번호 */}
-      <Link to={`/@${_id}`}>
+      <Link to={`/@${data.id}`}>
         <div className='listBar'>
-          <div className='teamLogos'>{title}</div>
-          <div className='listBarText'>{text}</div>
+          <div className='teamLogos'>{data.title}</div>
+          <div className='listBarText'>{data.text}</div>
           <div className='listBarRight'>
-            {_id}
+            userId-{data.id}
             <div className='listBarSub'>
-              <span className='look'>5123</span>
-              <span className='timeStamp'>{new Date(publichedDate).toLocaleDateString()}</span>
+              {/* <span className='look'>5123</span> */}
+              <span className='timeStamp'>{new Date().toLocaleDateString()}</span>
             </div>
           </div>
         </div>
@@ -73,21 +73,14 @@ const NewsListItem = ({ post }) => {
   );
 };
 
-const NewsMain = ({ posts, loading, error }) => {
-  console.log(posts, 'posts뭐가넘어오냐');
-  // 에러 발생 시
-  if (error) {
-    return <MainWrapper>에러가 발생 했습니다.</MainWrapper>;
-  }
+const NewsMain = () => {
+  const datas = boardList;
+  console.log(datas, '이거 확인해');
   return (
     <MainWrapper>
-      {!loading && posts && (
-        <div>
-          {posts.map(post => (
-            <NewsListItem post={post} key={post.id} />
-          ))}
-        </div>
-      )}
+      {datas.map(data => (
+        <NewsListItem data={data} key={data.id} />
+      ))}
     </MainWrapper>
   );
 };
