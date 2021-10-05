@@ -4,6 +4,7 @@ import { withRouter, useHistory, useLocation } from 'react-router-dom';
 import { readPost, unloadPost } from '../modules/post';
 import { readPostFun, unloadPostFun } from '../modules/postFun';
 import DetailMain from '../components/details/DetailMain';
+import FreeTalkMain from '../components/freetalk/FreeTalkMain';
 // import qs from qs
 
 const DetailContainer = ({ match }) => {
@@ -43,7 +44,7 @@ const DetailContainer = ({ match }) => {
     };
   }, [dispatch, postId]);
 
-  return <DetailMain postFun={postFun} errorFun={errorFun} />;
+  return <FreeTalkMain postFun={postFun} errorFun={errorFun} />;
 };
 //post={post} error={error} loading={loading}
 export default withRouter(DetailContainer);

@@ -59,7 +59,7 @@ const FreeTalkMain = ({ postsFun, loading, errorFun }) => {
       {!loading && postsFun && (
         <div>
           {postsFun.map(postFun => (
-            <TalkListItem postFun={postFun} key={postFun.id} />
+            <TalkListItem key={postFun._id} postFun={postFun} />
           ))}
         </div>
       )}

@@ -16,9 +16,9 @@ const WriteActionButtonsContainer = ({ history }) => {
 
   const dispatchFun = useDispatch();
   const { titleFun, textFun, postFun, postErrorFun } = useSelector(({ writeFun }) => ({
-    title: writeFun.titleFun,
-    text: writeFun.textFun,
-    post: writeFun.postFun,
+    titleFun: writeFun.titleFun,
+    textFun: writeFun.textFun,
+    posFunt: writeFun.postFun,
     postError: writeFun.postErrorFun,
   }));
 
@@ -50,25 +50,29 @@ const WriteActionButtonsContainer = ({ history }) => {
   const location = useLocation();
   // 성공 혹은 실패 시 할 작업
   useEffect(() => {
-    if (post) {
-      const { _id } = post;
-      const { pathname } = location;
-      console.log('s111alkjdofailoation', location);
-      console.log(post, 'post아넹 패스네임잇기룰~');
-      history.push(`/@${_id}/${pathname}`);
+    if (post || postFun) {
+      if (post) {
+        const { _id } = post;
+        // const { pathname } = location;
+        console.log('s111alkjdofailoation', location);
+        console.log(post, 'post아넹 패스네임잇기룰~');
+        history.push(`/@${_id}}`);
+      }
+      if (postFun) {
+        const { _id } = postFun;
+        // const { pathname } = location;
+        console.log('s111alkjdofailoation', location);
+        console.log(postFun, 'postFun아넹 패스네임잇기룰~');
+        history.push(`/@${_id}`);
+      }
     }
-    if (postFun) {
-      const { _id } = postFun;
-      const { pathname } = location;
-      console.log('s111alkjdofailoation', location);
-      console.log(post, 'post아넹 패스네임잇기룰~');
-      history.push(`/@${_id}/${pathname}`);
-    }
-    if (postError) {
-      console.log(postError, 'posterror');
-    }
-    if (postErrorFun) {
-      console.log(postError, 'posterror');
+    if (postError || postErrorFun) {
+      if (postError) {
+        console.log(postError, 'posterror');
+      }
+      if (postErrorFun) {
+        console.log(postError, 'posterror');
+      }
     }
   }, [history, post, postError, postFun, postErrorFun, location]);
 
